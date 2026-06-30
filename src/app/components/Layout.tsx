@@ -1,10 +1,11 @@
 import { Outlet, Link, useLocation } from 'react-router';
-import { Megaphone, Users, Tag, Handshake, Palette } from 'lucide-react';
+import { Megaphone, Tag, Handshake, Palette, Share2 } from 'lucide-react';
 
 const navItems = [
   { path: '/campaigns', label: 'Кампанії', icon: Megaphone },
   { path: '/cashback-categories', label: 'Категорії кешбеку', icon: Tag },
   { path: '/partners', label: 'Партнери', icon: Handshake },
+  { path: '/referral', label: 'Реферальна програма', icon: Share2 },
 ];
 
 export function Layout() {

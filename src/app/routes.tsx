@@ -7,6 +7,8 @@ import { CampaignDetails } from "./pages/CampaignDetails";
 import { Audiences } from "./pages/Audiences";
 import { CashbackCategoryManager } from "./pages/CashbackCategoryManager";
 import { Partners } from "./pages/Partners";
+import { ReferralProgram } from "./pages/ReferralProgram";
+import { ReferralHistory } from "./pages/ReferralHistory";
 import DevUIKit from "./pages/DevUIKit";
 
 export const router = createBrowserRouter([
@@ -55,9 +57,16 @@ export const router = createBrowserRouter([
         path: "cashback-categories", 
         element: <CashbackCategoryManager /> 
       },
-      { 
-        path: "partners", 
-        element: <Partners /> 
+      {
+        path: "partners",
+        element: <Partners />
+      },
+      {
+        path: "referral",
+        children: [
+          { index: true, element: <ReferralProgram /> },
+          { path: "history", element: <ReferralHistory /> },
+        ]
       },
       { 
         path: "dev-ui-kit", 

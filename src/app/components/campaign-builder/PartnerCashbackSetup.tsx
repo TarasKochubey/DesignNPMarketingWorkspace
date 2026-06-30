@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { Store, Search, Plus, X, Calendar, Percent, Edit2, Trash2 } from 'lucide-react';
 
-// Import partner logos
-import comfyLogo from 'figma:asset/a437862b887dc3624fff151dca74d2b8ead875af.png';
-import okkoLogo from 'figma:asset/8d9de33ce6a5178b30fcba5172bc3b1f51681a8e.png';
-import silpoLogo from 'figma:asset/d087854941d1bc2947bd1cfc6c762e3696209c7b.png';
-import ancLogo from 'figma:asset/57ba3bf87827639281a17eb2449e87f0a543adc6.png';
+const comfyLogo = '';
+const okkoLogo = '';
+const silpoLogo = '';
+const ancLogo = '';
 
 interface PartnerCashbackSetupProps {
   formData: any;
