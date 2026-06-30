@@ -1,0 +1,43 @@
+Collection,Mode,Variable,Value,Description
+NovaPay Colors,Default,purple/50,#faf5ff,Purple background lightest
+NovaPay Colors,Default,purple/100,#f3e8ff,Purple background light
+NovaPay Colors,Default,purple/200,#e9d5ff,Purple background medium
+NovaPay Colors,Default,purple/600,#9333ea,Purple primary
+NovaPay Colors,Default,purple/700,#7e22ce,Purple primary hover
+NovaPay Colors,Default,purple/800,#6b21a8,Purple primary pressed
+NovaPay Colors,Default,green/50,#f0fdf4,Green background lightest (Own funds)
+NovaPay Colors,Default,green/100,#dcfce7,Green background light (Own funds)
+NovaPay Colors,Default,green/500,#22c55e,Green medium (Own funds)
+NovaPay Colors,Default,green/600,#16a34a,Green primary (Own funds)
+NovaPay Colors,Default,green/700,#15803d,Green primary hover (Own funds)
+NovaPay Colors,Default,green/800,#166534,Green primary pressed (Own funds)
+NovaPay Colors,Default,orange/50,#fff7ed,Orange background lightest (Credit funds)
+NovaPay Colors,Default,orange/100,#ffedd5,Orange background light (Credit funds)
+NovaPay Colors,Default,orange/500,#f97316,Orange medium (Credit funds)
+NovaPay Colors,Default,orange/600,#ea580c,Orange primary (Credit funds)
+NovaPay Colors,Default,orange/700,#c2410c,Orange primary hover (Credit funds)
+NovaPay Colors,Default,orange/800,#9a3412,Orange primary pressed (Credit funds)
+NovaPay Colors,Default,gray/50,#f9fafb,Gray background page
+NovaPay Colors,Default,gray/100,#f3f4f6,Gray background hover
+NovaPay Colors,Default,gray/200,#e5e7eb,Gray border
+NovaPay Colors,Default,gray/300,#d1d5db,Gray border medium
+NovaPay Colors,Default,gray/400,#9ca3af,Gray text disabled
+NovaPay Colors,Default,gray/500,#6b7280,Gray text tertiary
+NovaPay Colors,Default,gray/600,#4b5563,Gray text secondary
+NovaPay Colors,Default,gray/700,#374151,Gray text primary
+NovaPay Colors,Default,gray/900,#111827,Gray text heading
+NovaPay Colors,Default,blue/50,#eff6ff,Blue background (Info)
+NovaPay Colors,Default,blue/100,#dbeafe,Blue background light (Info)
+NovaPay Colors,Default,blue/500,#3b82f6,Blue primary (Info)
+NovaPay Colors,Default,blue/700,#1d4ed8,Blue primary hover (Info)
+NovaPay Colors,Default,red/50,#fef2f2,Red background (Error)
+NovaPay Colors,Default,red/100,#fee2e2,Red background light (Error)
+NovaPay Colors,Default,red/500,#ef4444,Red primary (Error)
+NovaPay Colors,Default,red/600,#dc2626,Red primary hover (Error)
+NovaPay Colors,Default,red/700,#b91c1c,Red primary pressed (Error)
+NovaPay Colors,Default,yellow/50,#fefce8,Yellow background (Warning)
+NovaPay Colors,Default,yellow/100,#fef9c3,Yellow background light (Warning)
+NovaPay Colors,Default,yellow/500,#eab308,Yellow primary (Warning)
+NovaPay Colors,Default,yellow/600,#ca8a04,Yellow primary hover (Warning)
+NovaPay Colors,Default,pink/600,#db2777,Pink primary (Referral)
+NovaPay Colors,Default,indigo/600,#4f46e5,Indigo primary (Loyalty)

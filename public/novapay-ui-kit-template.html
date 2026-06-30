@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaPay UI Kit — Design Template</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      background: #f9fafb;
+      padding: 40px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: white;
+      padding: 60px;
+      border-radius: 16px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      margin-bottom: 60px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 48px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+
+    .header p {
+      font-size: 18px;
+      color: #6b7280;
+    }
+
+    .section {
+      margin-bottom: 80px;
+      page-break-inside: avoid;
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .subsection-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 20px;
+      margin-top: 32px;
+    }
+
+    /* Color Grid */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .color-box {
+      text-align: center;
+    }
+
+    .color-swatch {
+      width: 100%;
+      height: 96px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+
+    .color-name {
+      font-size: 14px;
+      font-family: monospace;
+      color: #4b5563;
+      margin-bottom: 4px;
+    }
+
+    .color-hex {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+
+    /* Typography */
+    .typography-item {
+      margin-bottom: 24px;
+      padding: 20px;
+      background: #f9fafb;
+      border-radius: 12px;
+    }
+
+    .typography-sample {
+      margin-bottom: 8px;
+    }
+
+    .typography-specs {
+      font-size: 12px;
+      font-family: monospace;
+      color: #6b7280;
+    }
+
+    /* Buttons */
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .button-showcase {
+      padding: 32px;
+      background: #f9fafb;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .button {
+      padding: 10px 24px;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .button-primary {
+      background: #9333ea;
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: #7e22ce;
+    }
+
+    .button-secondary {
+      background: white;
+      border: 1px solid #d1d5db;
+      color: #374151;
+    }
+
+    .button-secondary:hover {
+      background: #f9fafb;
+    }
+
+    .button-ghost {
+      background: transparent;
+      border: none;
+      color: #374151;
+      padding: 8px 16px;
+    }
+
+    .button-ghost:hover {
+      background: #f3f4f6;
+    }
+
+    .button-ghost-danger {
+      background: transparent;
+      border: none;
+      color: #dc2626;
+      padding: 8px 16px;
+    }
+
+    .button-ghost-danger:hover {
+      background: #fef2f2;
+    }
+
+    .button-success {
+      background: #16a34a;
+      color: white;
+    }
+
+    .button-danger {
+      background: #dc2626;
+      color: white;
+    }
+
+    .button-warning {
+      background: #ea580c;
+      color: white;
+    }
+
+    /* Input Fields */
+    .input-showcase {
+      display: grid;
+      gap: 24px;
+      max-width: 500px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: #374151;
+    }
+
+    .form-input {
+      padding: 10px 16px;
+      font-size: 16px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .form-input:focus {
+      border-color: #9333ea;
+      box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.1);
+    }
+
+    .form-input.error {
+      border-color: #dc2626;
+      background: #fef2f2;
+    }
+
+    .form-input:disabled {
+      background: #f3f4f6;
+      cursor: not-allowed;
+    }
+
+    .form-select {
+      padding: 10px 16px;
+      font-size: 16px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      outline: none;
+      background: white;
+      cursor: pointer;
+    }
+
+    /* Toggle Switch */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #d1d5db;
+      transition: .3s;
+      border-radius: 24px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .3s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #9333ea;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+
+    /* Range Slider */
+    .range-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 8px;
+      border-radius: 8px;
+      outline: none;
+      transition: background 0.3s;
+    }
+
+    .range-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: white;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      border: 2px solid currentColor;
+    }
+
+    .range-slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: white;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      border: 2px solid currentColor;
+    }
+
+    .range-slider.green {
+      color: #16a34a;
+    }
+
+    .range-slider.orange {
+      color: #ea580c;
+    }
+
+    /* Cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      background: white;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    .card-description {
+      font-size: 14px;
+      color: #6b7280;
+    }
+
+    .card:hover {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Badges */
+    .badge-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .badge {
+      padding: 6px 12px;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 9999px;
+    }
+
+    .badge-gray {
+      background: #f3f4f6;
+      color: #374151;
+    }
+
+    .badge-blue {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    .badge-green {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .badge-yellow {
+      background: #fef9c3;
+      color: #854d0e;
+    }
+
+    .badge-red {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .badge-purple {
+      background: #9333ea;
+      color: white;
+    }
+
+    .badge-orange {
+      background: #ea580c;
+      color: white;
+    }
+
+    .badge-pink {
+      background: #db2777;
+      color: white;
+    }
+
+    .badge-indigo {
+      background: #4f46e5;
+      color: white;
+    }
+
+    /* Alerts */
+    .alert {
+      padding: 16px;
+      border-radius: 8px;
+      display: flex;
+      gap: 12px;
+      align-items: start;
+      margin-bottom: 16px;
+    }
+
+    .alert-success {
+      background: #f0fdf4;
+      border: 1px solid #dcfce7;
+      color: #166534;
+    }
+
+    .alert-info {
+      background: #eff6ff;
+      border: 1px solid #dbeafe;
+      color: #1e40af;
+    }
+
+    .alert-warning {
+      background: #fefce8;
+      border: 1px solid #fef9c3;
+      color: #854d0e;
+    }
+
+    .alert-error {
+      background: #fef2f2;
+      border: 1px solid #fee2e2;
+      color: #991b1b;
+    }
+
+    .alert-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .alert-content {
+      flex: 1;
+    }
+
+    .alert-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    /* Icons */
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 24px;
+    }
+
+    .icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .icon-item svg {
+      width: 24px;
+      height: 24px;
+      color: #374151;
+    }
+
+    .icon-name {
+      font-size: 11px;
+      color: #6b7280;
+      text-align: center;
+    }
+
+    /* Spacing Guide */
+    .spacing-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .spacing-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .spacing-label {
+      width: 120px;
+      font-size: 14px;
+      font-family: monospace;
+      color: #4b5563;
+    }
+
+    .spacing-visual {
+      display: flex;
+    }
+
+    .spacing-box {
+      width: 48px;
+      height: 48px;
+      background: #e9d5ff;
+      border-radius: 8px;
+    }
+
+    /* Shadow Examples */
+    .shadow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .shadow-item {
+      text-align: center;
+    }
+
+    .shadow-box {
+      width: 100%;
+      height: 80px;
+      background: white;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .shadow-sm {
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      border: 1px solid #e5e7eb;
+    }
+
+    .shadow {
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .shadow-lg {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    }
+
+    .shadow-xl {
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Border Radius */
+    .radius-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+    }
+
+    .radius-item {
+      text-align: center;
+    }
+
+    .radius-box {
+      width: 80px;
+      height: 80px;
+      background: #e9d5ff;
+      margin: 0 auto 12px;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        padding: 0;
+      }
+      .container {
+        box-shadow: none;
+      }
+      .section {
+        page-break-inside: avoid;
+      }
+      .print-button {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <h1>NovaPay Marketing Workspace</h1>
+      <p>UI Kit & Design System — Версія 1.0</p>
+    </div>
+
+    <!-- Colors -->
+    <div class="section">
+      <h2 class="section-title">🎨 Кольорова палітра</h2>
+      
+      <h3 class="subsection-title">Primary — Purple (Основний)</h3>
+      <div class="color-grid">
+        <div class="color-box">
+          <div class="color-swatch" style="background: #faf5ff; border: 1px solid #e9d5ff;"></div>
+          <div class="color-name">purple-50</div>
+          <div class="color-hex">#faf5ff</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #f3e8ff; border: 1px solid #e9d5ff;"></div>
+          <div class="color-name">purple-100</div>
+          <div class="color-hex">#f3e8ff</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #e9d5ff;"></div>
+          <div class="color-name">purple-200</div>
+          <div class="color-hex">#e9d5ff</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #9333ea;"></div>
+          <div class="color-name" style="color: white; background: #9333ea; padding: 4px; border-radius: 4px;">purple-600</div>
+          <div class="color-hex">#9333ea</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #7e22ce;"></div>
+          <div class="color-name" style="color: white; background: #7e22ce; padding: 4px; border-radius: 4px;">purple-700</div>
+          <div class="color-hex">#7e22ce</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #6b21a8;"></div>
+          <div class="color-name" style="color: white; background: #6b21a8; padding: 4px; border-radius: 4px;">purple-800</div>
+          <div class="color-hex">#6b21a8</div>
+        </div>
+      </div>
+
+      <h3 class="subsection-title">Success — Green (Власні кошти)</h3>
+      <div class="color-grid">
+        <div class="color-box">
+          <div class="color-swatch" style="background: #f0fdf4; border: 1px solid #dcfce7;"></div>
+          <div class="color-name">green-50</div>
+          <div class="color-hex">#f0fdf4</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #dcfce7;"></div>
+          <div class="color-name">green-100</div>
+          <div class="color-hex">#dcfce7</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #22c55e;"></div>
+          <div class="color-name" style="color: white; background: #22c55e; padding: 4px; border-radius: 4px;">green-500</div>
+          <div class="color-hex">#22c55e</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #16a34a;"></div>
+          <div class="color-name" style="color: white; background: #16a34a; padding: 4px; border-radius: 4px;">green-600</div>
+          <div class="color-hex">#16a34a</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #15803d;"></div>
+          <div class="color-name" style="color: white; background: #15803d; padding: 4px; border-radius: 4px;">green-700</div>
+          <div class="color-hex">#15803d</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #166534;"></div>
+          <div class="color-name" style="color: white; background: #166534; padding: 4px; border-radius: 4px;">green-800</div>
+          <div class="color-hex">#166534</div>
+        </div>
+      </div>
+
+      <h3 class="subsection-title">Warning — Orange (Кредитні кошти)</h3>
+      <div class="color-grid">
+        <div class="color-box">
+          <div class="color-swatch" style="background: #fff7ed; border: 1px solid #ffedd5;"></div>
+          <div class="color-name">orange-50</div>
+          <div class="color-hex">#fff7ed</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #ffedd5;"></div>
+          <div class="color-name">orange-100</div>
+          <div class="color-hex">#ffedd5</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #f97316;"></div>
+          <div class="color-name" style="color: white; background: #f97316; padding: 4px; border-radius: 4px;">orange-500</div>
+          <div class="color-hex">#f97316</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #ea580c;"></div>
+          <div class="color-name" style="color: white; background: #ea580c; padding: 4px; border-radius: 4px;">orange-600</div>
+          <div class="color-hex">#ea580c</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #c2410c;"></div>
+          <div class="color-name" style="color: white; background: #c2410c; padding: 4px; border-radius: 4px;">orange-700</div>
+          <div class="color-hex">#c2410c</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #9a3412;"></div>
+          <div class="color-name" style="color: white; background: #9a3412; padding: 4px; border-radius: 4px;">orange-800</div>
+          <div class="color-hex">#9a3412</div>
+        </div>
+      </div>
+
+      <h3 class="subsection-title">Neutral — Gray (Текст та фони)</h3>
+      <div class="color-grid">
+        <div class="color-box">
+          <div class="color-swatch" style="background: #f9fafb; border: 1px solid #e5e7eb;"></div>
+          <div class="color-name">gray-50</div>
+          <div class="color-hex">#f9fafb</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #f3f4f6; border: 1px solid #e5e7eb;"></div>
+          <div class="color-name">gray-100</div>
+          <div class="color-hex">#f3f4f6</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #e5e7eb;"></div>
+          <div class="color-name">gray-200</div>
+          <div class="color-hex">#e5e7eb</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #4b5563;"></div>
+          <div class="color-name" style="color: white; background: #4b5563; padding: 4px; border-radius: 4px;">gray-600</div>
+          <div class="color-hex">#4b5563</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #374151;"></div>
+          <div class="color-name" style="color: white; background: #374151; padding: 4px; border-radius: 4px;">gray-700</div>
+          <div class="color-hex">#374151</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #111827;"></div>
+          <div class="color-name" style="color: white; background: #111827; padding: 4px; border-radius: 4px;">gray-900</div>
+          <div class="color-hex">#111827</div>
+        </div>
+      </div>
+
+      <h3 class="subsection-title">Semantic — Семантичні кольори</h3>
+      <div class="color-grid" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="color-box">
+          <div class="color-swatch" style="background: #3b82f6; display: flex; align-items: center; justify-content: center;">
+            <svg style="width: 32px; height: 32px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke-width="2"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 16v-4m0-4h.01"/>
+            </svg>
+          </div>
+          <div class="color-name">blue-500</div>
+          <div class="color-hex">Info</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #ef4444; display: flex; align-items: center; justify-content: center;">
+            <svg style="width: 32px; height: 32px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </div>
+          <div class="color-name">red-500</div>
+          <div class="color-hex">Error</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #eab308; display: flex; align-items: center; justify-content: center;">
+            <svg style="width: 32px; height: 32px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke-width="2"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01"/>
+            </svg>
+          </div>
+          <div class="color-name">yellow-500</div>
+          <div class="color-hex">Warning</div>
+        </div>
+        <div class="color-box">
+          <div class="color-swatch" style="background: #22c55e; display: flex; align-items: center; justify-content: center;">
+            <svg style="width: 32px; height: 32px; color: white;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <div class="color-name">green-500</div>
+          <div class="color-hex">Success</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Typography -->
+    <div class="section">
+      <h2 class="section-title">📝 Типографіка</h2>
+      
+      <div class="typography-item">
+        <div class="typography-sample" style="font-size: 36px; font-weight: 700; color: #111827;">
+          Heading 1 — Заголовок першого рівня
+        </div>
+        <div class="typography-specs">36px / Bold / Gray-900 • text-4xl font-bold</div>
+      </div>
+
+      <div class="typography-item">
+        <div class="typography-sample" style="font-size: 30px; font-weight: 700; color: #111827;">
+          Heading 2 — Заголовок другого рівня
+        </div>
+        <div class="typography-specs">30px / Bold / Gray-900 • text-3xl font-bold</div>
+      </div>
+
+      <div class="typography-item">
+        <div class="typography-sample" style="font-size: 24px; font-weight: 700; color: #111827;">
+          Heading 3 — Заголовок третього рівня
+        </div>
+        <div class="typography-specs">24px / Bold / Gray-900 • text-2xl font-bold</div>
+      </div>
+
+      <div class="typography-item">
+        <div class="typography-sample" style="font-size: 20px; font-weight: 600; color: #111827;">
+          Heading 4 — Заголовок четвертого рівня
+        </div>
+        <div class="typography-specs">20px / Semibold / Gray-900 • text-xl font-semibold</div>
+      </div>
+
+      <div class="typography-item">
+        <div class="typography-sample" style="font-size: 16px; color: #374151;">
+          Body Regular — Основний текст для параграфів та описів. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </div>
+        <div class="typography-specs">16px / Regular / Gray-700 • text-base</div>
+      </div>
+
+      <div class="typography-item">
+        <div class="typography-sample" style="font-size: 16px; font-weight: 500; color: #111827;">
+          Body Medium — Акцентований текст для важливих елементів
+        </div>
+        <div class="typography-specs">16px / Medium / Gray-900 • text-base font-medium</div>
+      </div>
+
+      <div class="typography-item">
+        <div class="typography-sample" style="font-size: 14px; color: #4b5563;">
+          Small Regular — Вторинний текст, підписи та додаткова інформація
+        </div>
+        <div class="typography-specs">14px / Regular / Gray-600 • text-sm</div>
+      </div>
+
+      <div class="typography-item">
+        <div class="typography-sample" style="font-size: 12px; color: #6b7280;">
+          Extra Small — Підказки, мітки та допоміжний текст
+        </div>
+        <div class="typography-specs">12px / Regular / Gray-500 • text-xs</div>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="section">
+      <h2 class="section-title">🔘 Кнопки</h2>
+      
+      <h3 class="subsection-title">Primary — Основні дії</h3>
+      <div class="button-showcase">
+        <button class="button button-primary">Створити кампанію</button>
+        <button class="button button-primary">➕ Додати</button>
+        <button class="button button-primary" style="opacity: 0.5; cursor: not-allowed;">Disabled</button>
+        <code style="font-size: 12px; color: #6b7280;">bg-purple-600 hover:bg-purple-700</code>
+      </div>
+
+      <h3 class="subsection-title">Secondary — Вторинні дії</h3>
+      <div class="button-showcase">
+        <button class="button button-secondary">Скасувати</button>
+        <button class="button button-secondary">📥 Експорт</button>
+        <button class="button button-secondary" style="opacity: 0.5; cursor: not-allowed;">Disabled</button>
+        <code style="font-size: 12px; color: #6b7280;">border border-gray-300 hover:bg-gray-50</code>
+      </div>
+
+      <h3 class="subsection-title">Ghost — Мінімалістичні дії</h3>
+      <div class="button-showcase">
+        <button class="button button-ghost">Редагувати</button>
+        <button class="button button-ghost">✏️ Змінити</button>
+        <button class="button button-ghost-danger">🗑️ Видалити</button>
+        <code style="font-size: 12px; color: #6b7280;">hover:bg-gray-100</code>
+      </div>
+
+      <h3 class="subsection-title">Success/Warning/Danger — Критичні дії</h3>
+      <div class="button-grid">
+        <div style="padding: 20px; background: #f9fafb; border-radius: 12px;">
+          <button class="button button-success" style="width: 100%;">Запустити кампанію</button>
+          <code style="font-size: 11px; color: #6b7280; display: block; margin-top: 12px;">bg-green-600</code>
+        </div>
+        <div style="padding: 20px; background: #f9fafb; border-radius: 12px;">
+          <button class="button button-warning" style="width: 100%;">Призупинити</button>
+          <code style="font-size: 11px; color: #6b7280; display: block; margin-top: 12px;">bg-orange-600</code>
+        </div>
+        <div style="padding: 20px; background: #f9fafb; border-radius: 12px;">
+          <button class="button button-danger" style="width: 100%;">Видалити назавжди</button>
+          <code style="font-size: 11px; color: #6b7280; display: block; margin-top: 12px;">bg-red-600</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Elements -->
+    <div class="section">
+      <h2 class="section-title">📋 Елементи форм</h2>
+
+      <h3 class="subsection-title">Input Fields</h3>
+      <div class="input-showcase">
+        <div class="form-group">
+          <label class="form-label">Назва кампанії <span style="color: #dc2626;">*</span></label>
+          <input type="text" class="form-input" placeholder="Введіть назву...">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">З помилкою</label>
+          <input type="text" class="form-input error" value="Неправильне значення">
+          <span style="font-size: 14px; color: #dc2626;">Це поле обов'язкове</span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Disabled</label>
+          <input type="text" class="form-input" value="Недоступне поле" disabled>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">З іконкою (пошук)</label>
+          <div style="position: relative;">
+            <input type="text" class="form-input" placeholder="Пошук..." style="padding-left: 40px;">
+            <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #9ca3af;">🔍</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="subsection-title">Textarea</h3>
+      <div class="input-showcase">
+        <div class="form-group">
+          <label class="form-label">Опис кампанії</label>
+          <textarea rows="4" class="form-input" placeholder="Введіть опис..." style="resize: none;"></textarea>
+        </div>
+      </div>
+
+      <h3 class="subsection-title">Select / Dropdown</h3>
+      <div class="input-showcase">
+        <div class="form-group">
+          <label class="form-label">Тип кампанії</label>
+          <select class="form-select">
+            <option>Оберіть тип...</option>
+            <option>Cashback</option>
+            <option>Promo</option>
+            <option>Referral</option>
+            <option>Loyalty</option>
+          </select>
+        </div>
+      </div>
+
+      <h3 class="subsection-title">Checkbox & Radio</h3>
+      <div style="max-width: 500px; padding: 24px; background: #f9fafb; border-radius: 12px;">
+        <div style="margin-bottom: 16px;">
+          <label style="display: flex; align-items: center; gap: 12px; cursor: pointer;">
+            <input type="checkbox" style="width: 18px; height: 18px; cursor: pointer;">
+            <span style="font-size: 14px; color: #374151;">Я погоджуюсь з умовами</span>
+          </label>
+        </div>
+        
+        <div style="border-top: 1px solid #e5e7eb; padding-top: 16px; margin-top: 16px;">
+          <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; margin-bottom: 12px;">
+            <input type="radio" name="campaign" style="width: 18px; height: 18px; cursor: pointer;">
+            <span style="font-size: 14px; color: #374151;">Категорійний кешбек</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 12px; cursor: pointer;">
+            <input type="radio" name="campaign" style="width: 18px; height: 18px; cursor: pointer;">
+            <span style="font-size: 14px; color: #374151;">Партнерський кешбек</span>
+          </label>
+        </div>
+      </div>
+
+      <h3 class="subsection-title">Toggle Switch</h3>
+      <div style="max-width: 500px; padding: 24px; background: #f9fafb; border-radius: 12px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider"></span>
+          </label>
+          <span style="font-size: 14px; color: #374151;">Увімкнено / Вимкнено</span>
+        </div>
+        <code style="font-size: 12px; color: #6b7280; display: block; margin-top: 12px;">Використовується для вкл/викл функцій</code>
+      </div>
+
+      <h3 class="subsection-title">Sliders — Ставки кешбеку</h3>
+      <div style="max-width: 600px; padding: 32px; background: #f9fafb; border-radius: 12px;">
+        <!-- Green Slider -->
+        <div style="margin-bottom: 32px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <label class="form-label">Власні кошти</label>
+            <span style="font-size: 20px; font-weight: 700; color: #16a34a;">5%</span>
+          </div>
+          <input type="range" class="range-slider green" min="0" max="10" step="0.5" value="5" 
+                 style="background: linear-gradient(to right, #16a34a 0%, #16a34a 50%, #e5e7eb 50%, #e5e7eb 100%);">
+          <p style="font-size: 12px; color: #6b7280; margin-top: 8px;">
+            На покупку 1000 грн → 50 балів
+          </p>
+        </div>
+
+        <!-- Orange Slider -->
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <label class="form-label">Кредитні кошти</label>
+            <span style="font-size: 20px; font-weight: 700; color: #ea580c;">3%</span>
+          </div>
+          <input type="range" class="range-slider orange" min="0" max="10" step="0.5" value="3"
+                 style="background: linear-gradient(to right, #ea580c 0%, #ea580c 30%, #e5e7eb 30%, #e5e7eb 100%);">
+          <p style="font-size: 12px; color: #6b7280; margin-top: 8px;">
+            На покупку 1000 грн → 30 балів
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="section">
+      <h2 class="section-title">🃏 Картки</h2>
+      
+      <div class="card-grid">
+        <div class="card">
+          <h3 class="card-title">Basic Card</h3>
+          <p class="card-description">Стандартна картка з білим фоном та сірим бордером.</p>
+          <code style="font-size: 11px; color: #6b7280; display: block; margin-top: 12px;">bg-white border border-gray-200</code>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Hover Card</h3>
+          <p class="card-description">Картка з hover ефектом (тінь при наведенні мишки).</p>
+          <code style="font-size: 11px; color: #6b7280; display: block; margin-top: 12px;">hover:shadow-lg</code>
+        </div>
+
+        <div class="card" style="border-color: #e9d5ff; background: #faf5ff;">
+          <h3 class="card-title" style="color: #7e22ce;">Colored Card</h3>
+          <p class="card-description" style="color: #6b21a8;">Картка з кольоровим фоном та бордером.</p>
+          <code style="font-size: 11px; color: #7e22ce; display: block; margin-top: 12px;">bg-purple-50 border-purple-200</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- Badges -->
+    <div class="section">
+      <h2 class="section-title">🏷️ Бейджі та мітки</h2>
+      
+      <h3 class="subsection-title">Status Badges — Статуси кампаній</h3>
+      <div class="badge-grid">
+        <span class="badge badge-gray">Draft</span>
+        <span class="badge badge-blue">Scheduled</span>
+        <span class="badge badge-green">Active</span>
+        <span class="badge badge-yellow">Paused</span>
+        <span class="badge badge-red">Ended</span>
+      </div>
+
+      <h3 class="subsection-title">Type Badges — Типи кампаній</h3>
+      <div class="badge-grid">
+        <span class="badge badge-purple">Cashback</span>
+        <span class="badge badge-orange">Promo</span>
+        <span class="badge badge-pink">Referral</span>
+        <span class="badge badge-indigo">Loyalty</span>
+      </div>
+    </div>
+
+    <!-- Alerts -->
+    <div class="section">
+      <h2 class="section-title">⚠️ Алерти та повідомлення</h2>
+      
+      <div class="alert alert-success">
+        <svg class="alert-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+        </svg>
+        <div class="alert-content">
+          <div class="alert-title">Успішно!</div>
+          <div>Кампанію успішно створено та запущено.</div>
+        </div>
+      </div>
+
+      <div class="alert alert-info">
+        <svg class="alert-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" stroke-width="2"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 16v-4m0-4h.01"/>
+        </svg>
+        <div class="alert-content">
+          <div class="alert-title">Інформація</div>
+          <div>Кампанія буде активована о 00:00 наступного дня.</div>
+        </div>
+      </div>
+
+      <div class="alert alert-warning">
+        <svg class="alert-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" stroke-width="2"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01"/>
+        </svg>
+        <div class="alert-content">
+          <div class="alert-title">Увага!</div>
+          <div>Бюджет кампанії майже вичерпано (85% використано).</div>
+        </div>
+      </div>
+
+      <div class="alert alert-error">
+        <svg class="alert-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+        <div class="alert-content">
+          <div class="alert-title">Помилка</div>
+          <div>Не вдалося зберегти зміни. Спробуйте ще раз.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Icons -->
+    <div class="section">
+      <h2 class="section-title">🎨 Іконки (Lucide React)</h2>
+      
+      <div class="icon-grid">
+        <div class="icon-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/>
+          </svg>
+          <span class="icon-name">Megaphone</span>
+        </div>
+        <div class="icon-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+          <span class="icon-name">Users</span>
+        </div>
+        <div class="icon-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
+          </svg>
+          <span class="icon-name">Tag</span>
+        </div>
+        <div class="icon-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+          <span class="icon-name">Handshake</span>
+        </div>
+        <div class="icon-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+          <span class="icon-name">Plus</span>
+        </div>
+        <div class="icon-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+          </svg>
+          <span class="icon-name">Edit</span>
+        </div>
+        <div class="icon-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+          </svg>
+          <span class="icon-name">Trash2</span>
+        </div>
+        <div class="icon-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <span class="icon-name">Search</span>
+        </div>
+        <div class="icon-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+          </svg>
+          <span class="icon-name">Download</span>
+        </div>
+        <div class="icon-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+          </svg>
+          <span class="icon-name">Upload</span>
+        </div>
+        <div class="icon-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+          <span class="icon-name">Settings</span>
+        </div>
+        <div class="icon-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+          </svg>
+          <span class="icon-name">Bell</span>
+        </div>
+        <div class="icon-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+          <span class="icon-name">Calendar</span>
+        </div>
+        <div class="icon-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          <span class="icon-name">Mail</span>
+        </div>
+        <div class="icon-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+          <span class="icon-name">Check</span>
+        </div>
+        <div class="icon-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+          <span class="icon-name">X</span>
+        </div>
+      </div>
+      
+      <p style="font-size: 14px; color: #6b7280; margin-top: 32px; text-align: center;">
+        Повний список іконок: <a href="https://lucide.dev/icons/" target="_blank" style="color: #9333ea; text-decoration: none; font-weight: 500;">lucide.dev/icons</a>
+      </p>
+    </div>
+
+    <!-- Spacing -->
+    <div class="section">
+      <h2 class="section-title">📏 Spacing — Відступи</h2>
+      
+      <div class="spacing-grid">
+        <div class="spacing-row">
+          <div class="spacing-label">8px (gap-2)</div>
+          <div class="spacing-visual" style="gap: 8px;">
+            <div class="spacing-box"></div>
+            <div class="spacing-box"></div>
+            <div class="spacing-box"></div>
+          </div>
+        </div>
+
+        <div class="spacing-row">
+          <div class="spacing-label">16px (gap-4)</div>
+          <div class="spacing-visual" style="gap: 16px;">
+            <div class="spacing-box"></div>
+            <div class="spacing-box"></div>
+            <div class="spacing-box"></div>
+          </div>
+        </div>
+
+        <div class="spacing-row">
+          <div class="spacing-label">24px (gap-6)</div>
+          <div class="spacing-visual" style="gap: 24px;">
+            <div class="spacing-box"></div>
+            <div class="spacing-box"></div>
+            <div class="spacing-box"></div>
+          </div>
+        </div>
+
+        <div class="spacing-row">
+          <div class="spacing-label">32px (gap-8)</div>
+          <div class="spacing-visual" style="gap: 32px;">
+            <div class="spacing-box"></div>
+            <div class="spacing-box"></div>
+            <div class="spacing-box"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Border Radius -->
+    <div class="section">
+      <h2 class="section-title">⭕ Border Radius — Скруглення</h2>
+      
+      <div class="radius-grid">
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius: 4px;"></div>
+          <code style="font-size: 12px; color: #6b7280;">4px (rounded)</code>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius: 6px;"></div>
+          <code style="font-size: 12px; color: #6b7280;">6px (rounded-md)</code>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius: 8px;"></div>
+          <code style="font-size: 12px; color: #6b7280;">8px (rounded-lg)</code>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius: 12px;"></div>
+          <code style="font-size: 12px; color: #6b7280;">12px (rounded-xl)</code>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius: 9999px;"></div>
+          <code style="font-size: 12px; color: #6b7280;">full (rounded-full)</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shadows -->
+    <div class="section">
+      <h2 class="section-title">💫 Shadows — Тіні</h2>
+      
+      <div class="shadow-grid">
+        <div class="shadow-item">
+          <div class="shadow-box shadow-sm"></div>
+          <code style="font-size: 12px; color: #6b7280;">shadow-sm</code>
+          <p style="font-size: 10px; color: #9ca3af; margin-top: 4px;">Y:1, Blur:2</p>
+        </div>
+        <div class="shadow-item">
+          <div class="shadow-box shadow"></div>
+          <code style="font-size: 12px; color: #6b7280;">shadow</code>
+          <p style="font-size: 10px; color: #9ca3af; margin-top: 4px;">Y:1, Blur:3</p>
+        </div>
+        <div class="shadow-item">
+          <div class="shadow-box shadow-lg"></div>
+          <code style="font-size: 12px; color: #6b7280;">shadow-lg</code>
+          <p style="font-size: 10px; color: #9ca3af; margin-top: 4px;">Y:10, Blur:15</p>
+        </div>
+        <div class="shadow-item">
+          <div class="shadow-box shadow-xl"></div>
+          <code style="font-size: 12px; color: #6b7280;">shadow-xl</code>
+          <p style="font-size: 10px; color: #9ca3af; margin-top: 4px;">Y:20, Blur:25</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Instructions -->
+    <div class="section" style="background: linear-gradient(135deg, #faf5ff 0%, #eff6ff 100%); padding: 40px; border-radius: 16px; border: 2px solid #e9d5ff;">
+      <h2 style="font-size: 28px; font-weight: 700; color: #111827; margin-bottom: 24px;">
+        📖 Як використовувати цей шаблон у Figma
+      </h2>
+      
+      <div style="display: grid; gap: 20px;">
+        <div style="background: white; padding: 20px; border-radius: 12px;">
+          <h3 style="font-size: 18px; font-weight: 600; color: #9333ea; margin-bottom: 8px;">
+            1️⃣ Імпортуйте кольори
+          </h3>
+          <p style="font-size: 14px; color: #4b5563; line-height: 1.6;">
+            Завантажте файл <code style="background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-family: monospace;">novapay-ui-kit-colors.csv</code> і використайте плагін "Variables Importer" або створіть змінні вручну згідно з палітрою вище.
+          </p>
+        </div>
+
+        <div style="background: white; padding: 20px; border-radius: 12px;">
+          <h3 style="font-size: 18px; font-weight: 600; color: #9333ea; margin-bottom: 8px;">
+            2️⃣ Зробіть скріншоти компонентів
+          </h3>
+          <p style="font-size: 14px; color: #4b5563; line-height: 1.6;">
+            Відкрийте цей HTML файл у браузері, зробіть скріншоти окремих секцій (кнопки, інпути, картки) та імпортуйте їх у Figma як референси при створенні компонентів.
+          </p>
+        </div>
+
+        <div style="background: white; padding: 20px; border-radius: 12px;">
+          <h3 style="font-size: 18px; font-weight: 600; color: #9333ea; margin-bottom: 8px;">
+            3️⃣ Створіть компоненти з Variants
+          </h3>
+          <p style="font-size: 14px; color: #4b5563; line-height: 1.6;">
+            Використовуйте Auto Layout і створіть варіанти для кожного компонента (Primary/Secondary, Default/Hover/Disabled). Застосовуйте створені Color Variables.
+          </p>
+        </div>
+
+        <div style="background: white; padding: 20px; border-radius: 12px;">
+          <h3 style="font-size: 18px; font-weight: 600; color: #9333ea; margin-bottom: 8px;">
+            4️⃣ Відкрийте інтерактивний UI Kit
+          </h3>
+          <p style="font-size: 14px; color: #4b5563; line-height: 1.6;">
+            У додатку перейдіть на сторінку <code style="background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-family: monospace;">/dev-ui-kit</code> для копіювання Tailwind класів та детальних специфікацій.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Add print button
+    const printBtn = document.createElement('button');
+    printBtn.textContent = '🖨️ Роздрукувати / Зберегти PDF';
+    printBtn.className = 'print-button';
+    printBtn.style.cssText = 'position: fixed; bottom: 40px; right: 40px; padding: 16px 24px; background: #9333ea; color: white; border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; box-shadow: 0 10px 25px rgba(147, 51, 234, 0.3); z-index: 1000;';
+    printBtn.onmouseover = () => printBtn.style.background = '#7e22ce';
+    printBtn.onmouseout = () => printBtn.style.background = '#9333ea';
+    printBtn.onclick = () => window.print();
+    document.body.appendChild(printBtn);
+  </script>
+</body>
+</html>
